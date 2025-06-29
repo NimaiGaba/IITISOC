@@ -58,5 +58,11 @@
         chatBody.scrollTop = chatBody.scrollHeight;
       }, 1500);
     }
+     document.getElementById('userInput').addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+          event.preventDefault(); // Prevents default behavior like adding a new line
+          sendMessage();
+        }
+      });
     window.addEventListener('load', resizeVideo);
     window.addEventListener('resize', resizeVideo);
