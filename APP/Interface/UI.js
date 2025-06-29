@@ -27,6 +27,12 @@ function toggleChat() {
         chatBody.scrollTop = chatBody.scrollHeight;
       }, 1500);
     }
+     document.getElementById('userInput').addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+          event.preventDefault(); // Prevents default behavior like adding a new line
+          sendMessage();
+        }
+      });
 
     function showSection(sectionId) {
       const sections = ['charting', 'portfolio', 'screener', 'technical', 'stories'];
